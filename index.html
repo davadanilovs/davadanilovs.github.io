@@ -4,61 +4,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Davids Studio — Premium Websites</title>
-<meta name="description" content="Modern websites for small businesses. Explore website design projects by Davids Studio.">
+<title>Davids Studio | Websites for Small Businesses</title>
+<meta name="description" content="Professional, modern and mobile-friendly websites for small businesses. Website projects starting at $99.">
 <style>
+:root {
+  --bg:#080c14;
+  --panel:#111a29;
+  --panel2:#152238;
+  --text:#f5f7fc;
+  --muted:#a5b1c4;
+  --blue:#83b1ff;
+  --border:#26364e;
+}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:#080b12;color:#f5f7fc;line-height:1.6}
+body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
 a{text-decoration:none;color:inherit}
 .container{width:min(1120px,90%);margin:auto}
-header{height:80px;border-bottom:1px solid #202838;display:flex;align-items:center}
-nav{display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:22px;font-weight:800;letter-spacing:1px}
-.logo span{color:#79aaff}
-.navlinks{display:flex;gap:30px;color:#aab4c5;font-size:14px}
-.navlinks a:hover{color:#fff}
-.hero{padding:125px 0 110px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#182b4b 0%,#080b12 65%)}
-.eyebrow{color:#86b2ff;font-size:12px;letter-spacing:3px;font-weight:bold}
+header{position:sticky;top:0;z-index:10;background:rgba(8,12,20,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:21px;font-weight:800;letter-spacing:1px}
+.logo span{color:var(--blue)}
+.navlinks{display:flex;gap:27px;color:var(--muted);font-size:14px}
+.navlinks a:hover{color:white}
+.btn{display:inline-block;background:var(--blue);color:#07101e;padding:13px 22px;border-radius:7px;font-weight:bold;transition:.2s}
+.btn:hover{background:#b0ceff;transform:translateY(-2px)}
+.btn-outline{background:transparent;color:white;border:1px solid #526987}
+.btn-outline:hover{background:#1a2b43}
+.hero{padding:120px 0 105px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#1b3153 0%,#080c14 68%)}
+.eyebrow{font-size:12px;letter-spacing:3px;color:var(--blue);font-weight:bold}
 h1{font-size:clamp(42px,7vw,76px);line-height:1.08;max-width:900px;margin:22px auto}
-h1 span{color:#80adff}
-.hero p{max-width:620px;margin:20px auto 32px;color:#aeb9ca;font-size:17px}
-.btn{display:inline-block;background:#80adff;color:#08101e;padding:14px 25px;border-radius:7px;font-weight:bold;transition:.2s}
-.btn:hover{background:#a8c7ff;transform:translateY(-2px)}
-.btn.secondary{background:transparent;border:1px solid #536783;color:white;margin-left:10px}
+h1 span{color:var(--blue)}
+.hero p{max-width:650px;margin:22px auto 30px;color:var(--muted);font-size:17px}
+.hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.trust{display:flex;justify-content:center;gap:35px;flex-wrap:wrap;margin-top:55px;color:#aab8cc;font-size:13px}
+.trust span:before{content:"✓";color:var(--blue);margin-right:8px}
 section{padding:85px 0}
-.section-heading{font-size:36px;margin-bottom:10px}
-.section-desc{color:#9eacbf;margin-bottom:35px}
+.section-title{font-size:36px;line-height:1.2;margin-bottom:12px}
+.section-desc{color:var(--muted);margin-bottom:35px}
 .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}
-.project{background:#111824;border:1px solid #263348;border-radius:13px;overflow:hidden;transition:.25s}
-.project:hover{transform:translateY(-5px);border-color:#648ac4}
-.preview{height:250px;overflow:hidden;background:#17243a;position:relative}
+.project{background:var(--panel);border:1px solid var(--border);border-radius:13px;overflow:hidden;transition:.25s}
+.project:hover{transform:translateY(-5px);border-color:#658ac1}
+.preview{height:270px;overflow:hidden;background:#17243a;position:relative}
 .preview iframe{width:1280px;height:850px;border:0;transform:scale(.36);transform-origin:top left;pointer-events:none}
-.project-info{padding:23px}
-.project-info h3{font-size:21px;margin-bottom:7px}
-.project-info p{font-size:14px;color:#aab5c7;margin-bottom:17px}
-.project-link{color:#8bb5ff;font-size:14px;font-weight:bold}
-.project-link:hover{color:#fff}
+.preview-label{position:absolute;bottom:12px;right:12px;background:rgba(7,13,24,.85);padding:5px 10px;border-radius:5px;font-size:11px;color:#dce8ff}
+.project-info{padding:24px}
+.project-category{font-size:11px;letter-spacing:2px;color:var(--blue);font-weight:bold}
+.project-info h3{font-size:22px;margin:7px 0}
+.project-info p{font-size:14px;color:var(--muted);margin-bottom:17px}
+.project-link{color:var(--blue);font-weight:bold;font-size:14px}
+.project-link:hover{color:white}
 .services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.service{padding:28px;background:#111824;border:1px solid #263348;border-radius:12px}
-.service .number{color:#80adff;font-size:13px;font-weight:bold}
-.service h3{margin:13px 0 8px}
-.service p{font-size:14px;color:#aab5c7}
-.about{background:#0e1521;border-top:1px solid #202838;border-bottom:1px solid #202838}
-.about-content{max-width:760px}
-.about-content p{color:#aab5c7;margin-top:15px}
-.contact{text-align:center;padding:65px 25px;background:linear-gradient(130deg,#172b49,#101725);border:1px solid #344967;border-radius:16px}
-.contact h2{font-size:clamp(30px,5vw,44px)}
-.contact p{color:#bdc9da;margin:12px 0 25px}
-footer{padding:30px 0;text-align:center;color:#78869b;font-size:13px}
-@media(max-width:700px){
- .navlinks{gap:13px;font-size:12px}
- .projects,.services{grid-template-columns:1fr}
+.service{padding:27px;background:var(--panel);border:1px solid var(--border);border-radius:12px}
+.service-icon{font-size:25px}
+.service h3{font-size:18px;margin:12px 0 8px}
+.service p{font-size:14px;color:var(--muted)}
+.pricing{background:linear-gradient(130deg,#142642,#0e1726);border:1px solid #344967;border-radius:16px;padding:45px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.price-label{color:var(--blue);font-size:12px;letter-spacing:2px;font-weight:bold}
+.price{font-size:54px;font-weight:800;margin:8px 0}
+.price span{font-size:16px;color:var(--muted);font-weight:normal}
+.price-copy{max-width:600px;color:#c0cadd;font-size:14px}
+.price-copy ul{list-style:none;margin:18px 0}
+.price-copy li{margin:7px 0}
+.price-copy li:before{content:"✓";color:var(--blue);margin-right:10px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{padding:24px;background:var(--panel);border:1px solid var(--border);border-radius:12px}
+.step-number{font-size:13px;color:var(--blue);font-weight:bold;letter-spacing:2px}
+.step h3{font-size:17px;margin:12px 0 7px}
+.step p{font-size:13px;color:var(--muted)}
+.about{background:#0e1521;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.about-inner{max-width:760px}
+.about-inner p{color:var(--muted);margin-top:15px}
+.faq-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.faq{background:var(--panel);border:1px solid var(--border);padding:22px;border-radius:10px}
+.faq h3{font-size:16px;margin-bottom:8px}
+.faq p{font-size:14px;color:var(--muted)}
+.contact{padding:65px 25px;text-align:center;background:linear-gradient(130deg,#172d4d,#101827);border:1px solid #344967;border-radius:16px}
+.contact h2{font-size:clamp(30px,5vw,45px);margin:12px 0}
+.contact p{color:#c0cadd;margin:0 auto 25px;max-width:580px}
+footer{padding:30px 0;text-align:center;color:#8491a5;font-size:13px}
+@media(max-width:750px){
+ .navlinks{gap:12px;font-size:12px}
+ .nav-cta{display:none}
+ .projects,.services,.faq-list{grid-template-columns:1fr}
+ .steps{grid-template-columns:1fr 1fr}
+ .pricing{display:block;padding:30px}
+ .pricing .btn{margin-top:22px}
  .hero{padding:85px 0}
  section{padding:65px 0}
- .preview{height:210px}
+ .preview{height:220px}
  .preview iframe{transform:scale(.29)}
- .btn.secondary{margin:12px 0 0}
+ .trust{gap:15px}
+}
+@media(max-width:430px){
+ .navlinks{gap:9px;font-size:11px}
+ .logo{font-size:17px}
+ .steps{grid-template-columns:1fr}
+ .section-title{font-size:30px}
 }
 </style>
 </head>
@@ -71,72 +113,88 @@ footer{padding:30px 0;text-align:center;color:#78869b;font-size:13px}
 <div class="navlinks">
 <a href="#work">Work</a>
 <a href="#services">Services</a>
-<a href="#about">About</a>
+<a href="#pricing">Pricing</a>
 <a href="#contact">Contact</a>
 </div>
+<a class="btn nav-cta" href="#contact">Let's Talk</a>
 </nav>
 </div>
 </header>
 
 <main>
+
 <section class="hero">
 <div class="container">
 <div class="eyebrow">INDEPENDENT WEB DESIGN STUDIO</div>
-<h1>Building websites that help businesses <span>grow.</span></h1>
-<p>Modern, professional and mobile-friendly websites for small businesses that want to make a strong first impression online.</p>
-<a href="#work" class="btn">Explore My Work</a>
-<a href="#contact" class="btn secondary">Get In Touch</a>
+<h1>Websites that make your business <span>stand out.</span></h1>
+<p>Modern, professional and mobile-friendly websites for small businesses. Build a stronger online presence and make a great first impression.</p>
+<div class="hero-actions">
+<a class="btn" href="#contact">Get a Free Quote</a>
+<a class="btn btn-outline" href="#work">Explore My Work</a>
+</div>
+<div class="trust">
+<span>Modern Design</span>
+<span>Mobile Friendly</span>
+<span>Personal Communication</span>
+</div>
 </div>
 </section>
 
 <section id="work">
 <div class="container">
-<h2 class="section-heading">Selected Projects</h2>
-<p class="section-desc">Website concepts designed for different types of small businesses.</p>
-
+<h2 class="section-title">Selected Projects</h2>
+<p class="section-desc">Website concepts created for businesses in different industries.</p>
 <div class="projects">
 
 <article class="project">
 <div class="preview">
 <iframe src="https://davadanilovs.github.io/brightnest-website/" title="BrightNest website preview" loading="lazy"></iframe>
+<div class="preview-label">LIVE WEBSITE PREVIEW</div>
 </div>
 <div class="project-info">
+<div class="project-category">CLEANING SERVICES</div>
 <h3>BrightNest Cleaning</h3>
-<p>Clean and welcoming website concept for a professional cleaning service.</p>
-<a class="project-link" href="https://davadanilovs.github.io/brightnest-website/" target="_blank" rel="noopener">View Full Website ↗</a>
+<p>A clean and welcoming website concept for a professional cleaning service.</p>
+<a class="project-link" href="https://davadanilovs.github.io/brightnest-website/" target="_blank" rel="noopener">Explore Project ↗</a>
 </div>
 </article>
 
 <article class="project">
 <div class="preview">
 <iframe src="https://davadanilovs.github.io/autoshine-detailing/" title="AutoShine website preview" loading="lazy"></iframe>
+<div class="preview-label">LIVE WEBSITE PREVIEW</div>
 </div>
 <div class="project-info">
+<div class="project-category">AUTOMOTIVE</div>
 <h3>AutoShine Detailing</h3>
-<p>Modern automotive detailing website concept focused on services and presentation.</p>
-<a class="project-link" href="https://davadanilovs.github.io/autoshine-detailing/" target="_blank" rel="noopener">View Full Website ↗</a>
+<p>A modern website concept showcasing automotive detailing services.</p>
+<a class="project-link" href="https://davadanilovs.github.io/autoshine-detailing/" target="_blank" rel="noopener">Explore Project ↗</a>
 </div>
 </article>
 
 <article class="project">
 <div class="preview">
 <iframe src="https://davadanilovs.github.io/greenleaf-landscaping/" title="GreenLeaf website preview" loading="lazy"></iframe>
+<div class="preview-label">LIVE WEBSITE PREVIEW</div>
 </div>
 <div class="project-info">
+<div class="project-category">LANDSCAPING</div>
 <h3>GreenLeaf Landscaping</h3>
-<p>Fresh and natural design concept for a landscaping and lawn care business.</p>
-<a class="project-link" href="https://davadanilovs.github.io/greenleaf-landscaping/" target="_blank" rel="noopener">View Full Website ↗</a>
+<p>A fresh design concept for a landscaping and lawn care business.</p>
+<a class="project-link" href="https://davadanilovs.github.io/greenleaf-landscaping/" target="_blank" rel="noopener">Explore Project ↗</a>
 </div>
 </article>
 
 <article class="project">
 <div class="preview">
 <iframe src="https://davadanilovs.github.io/prime-home-services/" title="Prime Home Services website preview" loading="lazy"></iframe>
+<div class="preview-label">LIVE WEBSITE PREVIEW</div>
 </div>
 <div class="project-info">
+<div class="project-category">HOME SERVICES</div>
 <h3>Prime Home Services</h3>
-<p>Professional website concept for a home improvement and maintenance business.</p>
-<a class="project-link" href="https://davadanilovs.github.io/prime-home-services/" target="_blank" rel="noopener">View Full Website ↗</a>
+<p>A professional website concept for home improvement and maintenance services.</p>
+<a class="project-link" href="https://davadanilovs.github.io/prime-home-services/" target="_blank" rel="noopener">Explore Project ↗</a>
 </div>
 </article>
 
@@ -146,23 +204,75 @@ footer{padding:30px 0;text-align:center;color:#78869b;font-size:13px}
 
 <section id="services">
 <div class="container">
-<h2 class="section-heading">What I Do</h2>
-<p class="section-desc">Simple, effective websites for businesses ready to grow online.</p>
+<h2 class="section-title">What I Offer</h2>
+<p class="section-desc">Everything you need to establish a professional online presence.</p>
 <div class="services">
 <div class="service">
-<div class="number">01 / DESIGN</div>
-<h3>Modern Website Design</h3>
-<p>Professional layouts that reflect your business and help build customer trust.</p>
+<div class="service-icon">✦</div>
+<h3>Custom Website Design</h3>
+<p>A modern layout designed around your business, services and customers.</p>
 </div>
 <div class="service">
-<div class="number">02 / RESPONSIVE</div>
-<h3>Mobile-Friendly</h3>
-<p>Responsive pages designed to work across phones, tablets and computers.</p>
+<div class="service-icon">▣</div>
+<h3>Mobile-Friendly Layout</h3>
+<p>A responsive website that looks great on phones, tablets and computers.</p>
 </div>
 <div class="service">
-<div class="number">03 / DELIVERY</div>
-<h3>Simple Process</h3>
-<p>Clear communication, practical solutions and a straightforward project process.</p>
+<div class="service-icon">↗</div>
+<h3>Clear Call to Action</h3>
+<p>Easy-to-find contact information and buttons that help visitors take the next step.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="pricing">
+<div class="container">
+<div class="pricing">
+<div>
+<div class="price-label">SIMPLE STARTING PRICE</div>
+<div class="price">$99 <span>/ starting price</span></div>
+<p class="price-copy">A professional one-page website for a small business. Final pricing depends on the features and content your project needs.</p>
+</div>
+<div class="price-copy">
+<strong>What can be included:</strong>
+<ul>
+<li>Custom one-page website</li>
+<li>Mobile-friendly design</li>
+<li>Business services and contact section</li>
+<li>Links to your social media</li>
+<li>Help with publishing your website</li>
+</ul>
+<a class="btn" href="https://contra.com/davids_danilovs_0kgonjw7" target="_blank" rel="noopener">Request a Quote</a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="process">
+<div class="container">
+<h2 class="section-title">How It Works</h2>
+<p class="section-desc">A straightforward process from the first message to your finished website.</p>
+<div class="steps">
+<div class="step">
+<div class="step-number">STEP 01</div>
+<h3>Tell Me About Your Business</h3>
+<p>Share your business details, goals and what you need from your website.</p>
+</div>
+<div class="step">
+<div class="step-number">STEP 02</div>
+<h3>Plan the Design</h3>
+<p>We agree on the structure, style and content for your website.</p>
+</div>
+<div class="step">
+<div class="step-number">STEP 03</div>
+<h3>Build Your Website</h3>
+<p>I create the website and share it with you for feedback.</p>
+</div>
+<div class="step">
+<div class="step-number">STEP 04</div>
+<h3>Launch</h3>
+<p>After approval, we prepare the website for publication.</p>
 </div>
 </div>
 </div>
@@ -170,10 +280,36 @@ footer{padding:30px 0;text-align:center;color:#78869b;font-size:13px}
 
 <section class="about" id="about">
 <div class="container">
-<div class="about-content">
-<div class="eyebrow">ABOUT THE STUDIO</div>
-<h2 class="section-heading">Small business websites, made simple.</h2>
-<p>I'm an independent web designer focused on creating clean, modern websites for small businesses. My goal is to help businesses establish a professional online presence with a website that is easy to use and looks great on every device.</p>
+<div class="about-inner">
+<div class="eyebrow">ABOUT DAVIDS STUDIO</div>
+<h2 class="section-title">Helping small businesses look professional online.</h2>
+<p>I'm an independent web designer focused on creating clean, modern websites for small businesses. I believe a business website should be clear, easy to use and make it simple for customers to understand what you offer.</p>
+<p>My focus is practical design, responsive layouts and straightforward communication throughout the project.</p>
+</div>
+</div>
+</section>
+
+<section id="faq">
+<div class="container">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<p class="section-desc">A few things you might want to know before getting started.</p>
+<div class="faq-list">
+<div class="faq">
+<h3>How much does a website cost?</h3>
+<p>One-page website projects start at $99. The final price depends on the scope and features you need.</p>
+</div>
+<div class="faq">
+<h3>Will my website work on phones?</h3>
+<p>Yes. Websites are designed to adapt to mobile phones, tablets and desktop screens.</p>
+</div>
+<div class="faq">
+<h3>How do I get started?</h3>
+<p>Send me a message through Contra with a short description of your business and project.</p>
+</div>
+<div class="faq">
+<h3>Can I request changes?</h3>
+<p>Yes. We can discuss feedback and revisions as part of the project scope before starting.</p>
+</div>
 </div>
 </div>
 </section>
@@ -181,13 +317,14 @@ footer{padding:30px 0;text-align:center;color:#78869b;font-size:13px}
 <section id="contact">
 <div class="container">
 <div class="contact">
-<div class="eyebrow">HAVE A PROJECT IN MIND?</div>
-<h2>Let's build something great.</h2>
-<p>Tell me about your business and what kind of website you need.</p>
-<a class="btn" href="https://contra.com/davids_danilovs_0kgonjw7" target="_blank" rel="noopener">Contact Me on Contra ↗</a>
+<div class="eyebrow">LET'S WORK TOGETHER</div>
+<h2>Ready to build your website?</h2>
+<p>Tell me about your business and what you are looking for. Let's create a website that gives your business a strong online presence.</p>
+<a class="btn" href="https://contra.com/davids_danilovs_0kgonjw7" target="_blank" rel="noopener">Get a Free Quote on Contra ↗</a>
 </div>
 </div>
 </section>
+
 </main>
 
 <footer>
