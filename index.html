@@ -2,149 +2,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Davids Web Studio | Websites for Small Businesses</title>
-  <meta name="description" content="Modern, professional websites for small businesses.">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: Arial, sans-serif;
-      background: #090d16;
-      color: #f5f7fb;
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(1100px, 90%); margin: auto; }
-    header { padding: 25px 0; border-bottom: 1px solid #202838; }
-    nav { display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-size: 21px; font-weight: bold; }
-    .logo span { color: #70a5ff; }
-    nav a { color: #bdc7d8; margin-left: 22px; font-size: 14px; }
-    .hero { padding: 110px 0 100px; text-align: center; }
-    .tag {
-      display: inline-block; padding: 7px 14px; border: 1px solid #34445f;
-      border-radius: 30px; color: #9dbfff; font-size: 13px; margin-bottom: 25px;
-    }
-    h1 { font-size: clamp(38px, 7vw, 68px); line-height: 1.08; max-width: 850px; margin: auto; }
-    h1 span { color: #79aaff; }
-    .hero p { color: #aab5c7; max-width: 590px; margin: 24px auto 32px; }
-    .button {
-      display: inline-block; background: #79aaff; color: #08101e;
-      padding: 13px 23px; border-radius: 7px; font-weight: bold;
-    }
-    section { padding: 75px 0; }
-    .section-title { font-size: 34px; margin-bottom: 12px; }
-    .section-text { color: #aab5c7; margin-bottom: 35px; }
-    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .project {
-      background: #111a29; border: 1px solid #26344a;
-      border-radius: 12px; padding: 28px;
-    }
-    .project h3 { font-size: 21px; margin-bottom: 9px; }
-    .project p { color: #aab5c7; margin-bottom: 20px; }
-    .project a { color: #83b1ff; font-weight: bold; }
-    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .service { background: #111a29; padding: 25px; border-radius: 10px; }
-    .service h3 { margin-bottom: 10px; }
-    .service p { color: #aab5c7; font-size: 14px; }
-    .contact { text-align: center; background: #111a29; border-radius: 14px; padding: 55px 20px; }
-    .contact p { color: #aab5c7; margin: 15px 0 25px; }
-    footer { text-align: center; padding: 30px; color: #8290a5; font-size: 13px; }
-    @media (max-width: 650px) {
-      nav { flex-direction: column; gap: 14px; }
-      nav a { margin: 0 8px; }
-      .projects, .services { grid-template-columns: 1fr; }
-      .hero { padding: 75px 0; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Davids Studio — Premium Websites</title>
+<meta name="description" content="Modern websites for small businesses. Explore website design projects by Davids Studio.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#080b12;color:#f5f7fc;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,90%);margin:auto}
+header{height:80px;border-bottom:1px solid #202838;display:flex;align-items:center}
+nav{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:22px;font-weight:800;letter-spacing:1px}
+.logo span{color:#79aaff}
+.navlinks{display:flex;gap:30px;color:#aab4c5;font-size:14px}
+.navlinks a:hover{color:#fff}
+.hero{padding:125px 0 110px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#182b4b 0%,#080b12 65%)}
+.eyebrow{color:#86b2ff;font-size:12px;letter-spacing:3px;font-weight:bold}
+h1{font-size:clamp(42px,7vw,76px);line-height:1.08;max-width:900px;margin:22px auto}
+h1 span{color:#80adff}
+.hero p{max-width:620px;margin:20px auto 32px;color:#aeb9ca;font-size:17px}
+.btn{display:inline-block;background:#80adff;color:#08101e;padding:14px 25px;border-radius:7px;font-weight:bold;transition:.2s}
+.btn:hover{background:#a8c7ff;transform:translateY(-2px)}
+.btn.secondary{background:transparent;border:1px solid #536783;color:white;margin-left:10px}
+section{padding:85px 0}
+.section-heading{font-size:36px;margin-bottom:10px}
+.section-desc{color:#9eacbf;margin-bottom:35px}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}
+.project{background:#111824;border:1px solid #263348;border-radius:13px;overflow:hidden;transition:.25s}
+.project:hover{transform:translateY(-5px);border-color:#648ac4}
+.preview{height:250px;overflow:hidden;background:#17243a;position:relative}
+.preview iframe{width:1280px;height:850px;border:0;transform:scale(.36);transform-origin:top left;pointer-events:none}
+.project-info{padding:23px}
+.project-info h3{font-size:21px;margin-bottom:7px}
+.project-info p{font-size:14px;color:#aab5c7;margin-bottom:17px}
+.project-link{color:#8bb5ff;font-size:14px;font-weight:bold}
+.project-link:hover{color:#fff}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service{padding:28px;background:#111824;border:1px solid #263348;border-radius:12px}
+.service .number{color:#80adff;font-size:13px;font-weight:bold}
+.service h3{margin:13px 0 8px}
+.service p{font-size:14px;color:#aab5c7}
+.about{background:#0e1521;border-top:1px solid #202838;border-bottom:1px solid #202838}
+.about-content{max-width:760px}
+.about-content p{color:#aab5c7;margin-top:15px}
+.contact{text-align:center;padding:65px 25px;background:linear-gradient(130deg,#172b49,#101725);border:1px solid #344967;border-radius:16px}
+.contact h2{font-size:clamp(30px,5vw,44px)}
+.contact p{color:#bdc9da;margin:12px 0 25px}
+footer{padding:30px 0;text-align:center;color:#78869b;font-size:13px}
+@media(max-width:700px){
+ .navlinks{gap:13px;font-size:12px}
+ .projects,.services{grid-template-columns:1fr}
+ .hero{padding:85px 0}
+ section{padding:65px 0}
+ .preview{height:210px}
+ .preview iframe{transform:scale(.29)}
+ .btn.secondary{margin:12px 0 0}
+}
+</style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="logo">DAVIDS<span>.</span></div>
-        <div>
-          <a href="#work">Work</a>
-          <a href="#services">Services</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="tag">WEB DESIGN FOR SMALL BUSINESSES</div>
-        <h1>Websites that make your business <span>stand out.</span></h1>
-        <p>Modern, clean and professional websites designed to help small businesses build trust and reach more customers.</p>
-        <a class="button" href="#work">Explore My Work</a>
-      </div>
-    </section>
+<header>
+<div class="container">
+<nav>
+<a href="#" class="logo">DAVIDS<span>.</span>STUDIO</a>
+<div class="navlinks">
+<a href="#work">Work</a>
+<a href="#services">Services</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+</div>
+</header>
 
-    <section id="work">
-      <div class="container">
-        <h2 class="section-title">Selected Work</h2>
-        <p class="section-text">A selection of website concepts created for different industries.</p>
-        <div class="projects">
-          <div class="project">
-            <h3>BrightNest Cleaning</h3>
-            <p>A clean and welcoming website concept for a cleaning business.</p>
-            <a href="https://davadanilovs.github.io/brightnest-website/" target="_blank">View Website →</a>
-          </div>
-          <div class="project">
-            <h3>AutoShine Detailing</h3>
-            <p>A modern website concept for an automotive detailing service.</p>
-            <a href="https://davadanilovs.github.io/autoshine-detailing/" target="_blank">View Website →</a>
-          </div>
-          <div class="project">
-            <h3>GreenLeaf Landscaping</h3>
-            <p>A fresh design concept for a landscaping company.</p>
-            <a href="https://davadanilovs.github.io/greenleaf-landscaping/" target="_blank">View Website →</a>
-          </div>
-          <div class="project">
-            <h3>Prime Home Services</h3>
-            <p>A professional website concept for home service providers.</p>
-            <a href="https://davadanilovs.github.io/prime-home-services/" target="_blank">View Website →</a>
-          </div>
-        </div>
-      </div>
-    </section>
+<main>
+<section class="hero">
+<div class="container">
+<div class="eyebrow">INDEPENDENT WEB DESIGN STUDIO</div>
+<h1>Building websites that help businesses <span>grow.</span></h1>
+<p>Modern, professional and mobile-friendly websites for small businesses that want to make a strong first impression online.</p>
+<a href="#work" class="btn">Explore My Work</a>
+<a href="#contact" class="btn secondary">Get In Touch</a>
+</div>
+</section>
 
-    <section id="services">
-      <div class="container">
-        <h2 class="section-title">What I Offer</h2>
-        <p class="section-text">Everything a small business needs to get started online.</p>
-        <div class="services">
-          <div class="service">
-            <h3>Website Design</h3>
-            <p>Modern layouts tailored to your business and its customers.</p>
-          </div>
-          <div class="service">
-            <h3>Mobile Friendly</h3>
-            <p>Websites that work smoothly on phones, tablets and computers.</p>
-          </div>
-          <div class="service">
-            <h3>Fast Delivery</h3>
-            <p>A straightforward process and clear communication from start to finish.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<section id="work">
+<div class="container">
+<h2 class="section-heading">Selected Projects</h2>
+<p class="section-desc">Website concepts designed for different types of small businesses.</p>
 
-    <section id="contact">
-      <div class="container">
-        <div class="contact">
-          <h2 class="section-title">Let's Build Your Website</h2>
-          <p>Have a business that needs a website? Let's talk about your project.</p>
-          <a class="button" href="https://contra.com/davids_danilovs_0kgonjw7" target="_blank">Contact Me on Contra</a>
-        </div>
-      </div>
-    </section>
-  </main>
+<div class="projects">
 
-  <footer>© 2026 Davids Web Studio. Website concepts created for portfolio purposes.</footer>
+<article class="project">
+<div class="preview">
+<iframe src="https://davadanilovs.github.io/brightnest-website/" title="BrightNest website preview" loading="lazy"></iframe>
+</div>
+<div class="project-info">
+<h3>BrightNest Cleaning</h3>
+<p>Clean and welcoming website concept for a professional cleaning service.</p>
+<a class="project-link" href="https://davadanilovs.github.io/brightnest-website/" target="_blank" rel="noopener">View Full Website ↗</a>
+</div>
+</article>
+
+<article class="project">
+<div class="preview">
+<iframe src="https://davadanilovs.github.io/autoshine-detailing/" title="AutoShine website preview" loading="lazy"></iframe>
+</div>
+<div class="project-info">
+<h3>AutoShine Detailing</h3>
+<p>Modern automotive detailing website concept focused on services and presentation.</p>
+<a class="project-link" href="https://davadanilovs.github.io/autoshine-detailing/" target="_blank" rel="noopener">View Full Website ↗</a>
+</div>
+</article>
+
+<article class="project">
+<div class="preview">
+<iframe src="https://davadanilovs.github.io/greenleaf-landscaping/" title="GreenLeaf website preview" loading="lazy"></iframe>
+</div>
+<div class="project-info">
+<h3>GreenLeaf Landscaping</h3>
+<p>Fresh and natural design concept for a landscaping and lawn care business.</p>
+<a class="project-link" href="https://davadanilovs.github.io/greenleaf-landscaping/" target="_blank" rel="noopener">View Full Website ↗</a>
+</div>
+</article>
+
+<article class="project">
+<div class="preview">
+<iframe src="https://davadanilovs.github.io/prime-home-services/" title="Prime Home Services website preview" loading="lazy"></iframe>
+</div>
+<div class="project-info">
+<h3>Prime Home Services</h3>
+<p>Professional website concept for a home improvement and maintenance business.</p>
+<a class="project-link" href="https://davadanilovs.github.io/prime-home-services/" target="_blank" rel="noopener">View Full Website ↗</a>
+</div>
+</article>
+
+</div>
+</div>
+</section>
+
+<section id="services">
+<div class="container">
+<h2 class="section-heading">What I Do</h2>
+<p class="section-desc">Simple, effective websites for businesses ready to grow online.</p>
+<div class="services">
+<div class="service">
+<div class="number">01 / DESIGN</div>
+<h3>Modern Website Design</h3>
+<p>Professional layouts that reflect your business and help build customer trust.</p>
+</div>
+<div class="service">
+<div class="number">02 / RESPONSIVE</div>
+<h3>Mobile-Friendly</h3>
+<p>Responsive pages designed to work across phones, tablets and computers.</p>
+</div>
+<div class="service">
+<div class="number">03 / DELIVERY</div>
+<h3>Simple Process</h3>
+<p>Clear communication, practical solutions and a straightforward project process.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="about" id="about">
+<div class="container">
+<div class="about-content">
+<div class="eyebrow">ABOUT THE STUDIO</div>
+<h2 class="section-heading">Small business websites, made simple.</h2>
+<p>I'm an independent web designer focused on creating clean, modern websites for small businesses. My goal is to help businesses establish a professional online presence with a website that is easy to use and looks great on every device.</p>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<div class="contact">
+<div class="eyebrow">HAVE A PROJECT IN MIND?</div>
+<h2>Let's build something great.</h2>
+<p>Tell me about your business and what kind of website you need.</p>
+<a class="btn" href="https://contra.com/davids_danilovs_0kgonjw7" target="_blank" rel="noopener">Contact Me on Contra ↗</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">© 2026 Davids Studio. Portfolio website concepts.</div>
+</footer>
+
 </body>
 </html>
