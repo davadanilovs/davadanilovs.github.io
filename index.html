@@ -4,332 +4,663 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Davids Studio | Websites for Small Businesses</title>
-<meta name="description" content="Professional, modern and mobile-friendly websites for small businesses. Website projects starting at $99.">
+<title>Digital Growth Studio</title>
+<meta name="description" content="Modern websites and digital solutions for growing businesses.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 :root {
-  --bg:#080c14;
-  --panel:#111a29;
-  --panel2:#152238;
-  --text:#f5f7fc;
-  --muted:#a5b1c4;
-  --blue:#83b1ff;
-  --border:#26364e;
+    --bg: #08090b;
+    --surface: #111317;
+    --text: #f5f5f5;
+    --muted: #92949b;
+    --border: rgba(255,255,255,.09);
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
-a{text-decoration:none;color:inherit}
-.container{width:min(1120px,90%);margin:auto}
-header{position:sticky;top:0;z-index:10;background:rgba(8,12,20,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-nav{height:76px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:21px;font-weight:800;letter-spacing:1px}
-.logo span{color:var(--blue)}
-.navlinks{display:flex;gap:27px;color:var(--muted);font-size:14px}
-.navlinks a:hover{color:white}
-.btn{display:inline-block;background:var(--blue);color:#07101e;padding:13px 22px;border-radius:7px;font-weight:bold;transition:.2s}
-.btn:hover{background:#b0ceff;transform:translateY(-2px)}
-.btn-outline{background:transparent;color:white;border:1px solid #526987}
-.btn-outline:hover{background:#1a2b43}
-.hero{padding:120px 0 105px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#1b3153 0%,#080c14 68%)}
-.eyebrow{font-size:12px;letter-spacing:3px;color:var(--blue);font-weight:bold}
-h1{font-size:clamp(42px,7vw,76px);line-height:1.08;max-width:900px;margin:22px auto}
-h1 span{color:var(--blue)}
-.hero p{max-width:650px;margin:22px auto 30px;color:var(--muted);font-size:17px}
-.hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-.trust{display:flex;justify-content:center;gap:35px;flex-wrap:wrap;margin-top:55px;color:#aab8cc;font-size:13px}
-.trust span:before{content:"✓";color:var(--blue);margin-right:8px}
-section{padding:85px 0}
-.section-title{font-size:36px;line-height:1.2;margin-bottom:12px}
-.section-desc{color:var(--muted);margin-bottom:35px}
-.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}
-.project{background:var(--panel);border:1px solid var(--border);border-radius:13px;overflow:hidden;transition:.25s}
-.project:hover{transform:translateY(-5px);border-color:#658ac1}
-.preview{height:270px;overflow:hidden;background:#17243a;position:relative}
-.preview iframe{width:1280px;height:850px;border:0;transform:scale(.36);transform-origin:top left;pointer-events:none}
-.preview-label{position:absolute;bottom:12px;right:12px;background:rgba(7,13,24,.85);padding:5px 10px;border-radius:5px;font-size:11px;color:#dce8ff}
-.project-info{padding:24px}
-.project-category{font-size:11px;letter-spacing:2px;color:var(--blue);font-weight:bold}
-.project-info h3{font-size:22px;margin:7px 0}
-.project-info p{font-size:14px;color:var(--muted);margin-bottom:17px}
-.project-link{color:var(--blue);font-weight:bold;font-size:14px}
-.project-link:hover{color:white}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.service{padding:27px;background:var(--panel);border:1px solid var(--border);border-radius:12px}
-.service-icon{font-size:25px}
-.service h3{font-size:18px;margin:12px 0 8px}
-.service p{font-size:14px;color:var(--muted)}
-.pricing{background:linear-gradient(130deg,#142642,#0e1726);border:1px solid #344967;border-radius:16px;padding:45px;display:flex;align-items:center;justify-content:space-between;gap:30px}
-.price-label{color:var(--blue);font-size:12px;letter-spacing:2px;font-weight:bold}
-.price{font-size:54px;font-weight:800;margin:8px 0}
-.price span{font-size:16px;color:var(--muted);font-weight:normal}
-.price-copy{max-width:600px;color:#c0cadd;font-size:14px}
-.price-copy ul{list-style:none;margin:18px 0}
-.price-copy li{margin:7px 0}
-.price-copy li:before{content:"✓";color:var(--blue);margin-right:10px}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.step{padding:24px;background:var(--panel);border:1px solid var(--border);border-radius:12px}
-.step-number{font-size:13px;color:var(--blue);font-weight:bold;letter-spacing:2px}
-.step h3{font-size:17px;margin:12px 0 7px}
-.step p{font-size:13px;color:var(--muted)}
-.about{background:#0e1521;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.about-inner{max-width:760px}
-.about-inner p{color:var(--muted);margin-top:15px}
-.faq-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.faq{background:var(--panel);border:1px solid var(--border);padding:22px;border-radius:10px}
-.faq h3{font-size:16px;margin-bottom:8px}
-.faq p{font-size:14px;color:var(--muted)}
-.contact{padding:65px 25px;text-align:center;background:linear-gradient(130deg,#172d4d,#101827);border:1px solid #344967;border-radius:16px}
-.contact h2{font-size:clamp(30px,5vw,45px);margin:12px 0}
-.contact p{color:#c0cadd;margin:0 auto 25px;max-width:580px}
-footer{padding:30px 0;text-align:center;color:#8491a5;font-size:13px}
-@media(max-width:750px){
- .navlinks{gap:12px;font-size:12px}
- .nav-cta{display:none}
- .projects,.services,.faq-list{grid-template-columns:1fr}
- .steps{grid-template-columns:1fr 1fr}
- .pricing{display:block;padding:30px}
- .pricing .btn{margin-top:22px}
- .hero{padding:85px 0}
- section{padding:65px 0}
- .preview{height:220px}
- .preview iframe{transform:scale(.29)}
- .trust{gap:15px}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-@media(max-width:430px){
- .navlinks{gap:9px;font-size:11px}
- .logo{font-size:17px}
- .steps{grid-template-columns:1fr}
- .section-title{font-size:30px}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.6;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.container {
+    width: min(1160px, 90%);
+    margin: auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(8,9,11,.9);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.logo span { color: #85878d; }
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: 14px;
+    transition: .3s;
+}
+
+.nav-links a:hover { color: white; }
+
+.nav-cta {
+    border: 1px solid var(--border);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 13px;
+}
+
+.nav-cta:hover {
+    background: white;
+    color: black;
+}
+
+.hero {
+    padding: 135px 0 115px;
+    background: radial-gradient(ellipse at 85% 15%, #202126 0%, transparent 45%);
+}
+
+.label {
+    color: #aaa;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+}
+
+.dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: #ddd;
+    border-radius: 50%;
+    margin-right: 9px;
+}
+
+.hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(48px, 8vw, 92px);
+    line-height: 1.04;
+    letter-spacing: -5px;
+    max-width: 950px;
+}
+
+.hero h1 span { color: #777980; }
+
+.hero-text {
+    margin-top: 30px;
+    color: var(--muted);
+    font-size: 17px;
+    max-width: 520px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 38px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 24px;
+    border-radius: 40px;
+    font-size: 14px;
+    display: inline-block;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: #f4f4f4;
+    color: #090909;
+}
+
+.btn-primary:hover {
+    background: #ccc;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover { background: #17191d; }
+
+section {
+    padding: 100px 0;
+    border-top: 1px solid var(--border);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+    margin-bottom: 55px;
+}
+
+.section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 48px;
+    letter-spacing: -2px;
+    line-height: 1.1;
+}
+
+.section-subtitle {
+    color: var(--muted);
+    max-width: 380px;
+    font-size: 14px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+}
+
+.service-card {
+    padding: 36px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    transition: .35s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    background: #17181c;
+    border-color: rgba(255,255,255,.2);
+}
+
+.service-number {
+    color: #73757c;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.service-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 25px;
+    margin: 30px 0 12px;
+}
+
+.service-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.service-price {
+    margin-top: 28px;
+    font-size: 13px;
+    color: #d2d2d2;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 25px;
+}
+
+.project-image {
+    width: 100%;
+    aspect-ratio: 1.55/1;
+    background: #141519;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s;
+}
+
+.project:hover img { transform: scale(1.04); }
+
+.project-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 2px;
+}
+
+.project-info h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+}
+
+.project-info p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.project-arrow {
+    font-size: 22px;
+    color: #888;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.about-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 48px;
+    line-height: 1.15;
+    letter-spacing: -2px;
+}
+
+.about-text {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.about-text p + p { margin-top: 20px; }
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+}
+
+.process-card {
+    padding: 28px 22px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: var(--surface);
+}
+
+.process-card span {
+    font-size: 12px;
+    color: #81838a;
+}
+
+.process-card h3 {
+    margin: 25px 0 10px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+}
+
+.process-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.contact-section { padding: 120px 0; }
+
+.contact-box {
+    background: #f0f0f0;
+    color: #0a0a0a;
+    border-radius: 24px;
+    padding: 75px;
+}
+
+.contact-box .label { color: #555; }
+
+.contact-box h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(40px,6vw,72px);
+    letter-spacing: -3px;
+    line-height: 1.05;
+    max-width: 750px;
+}
+
+.contact-box p {
+    color: #555;
+    margin-top: 20px;
+    max-width: 500px;
+}
+
+.contact-box .btn {
+    margin-top: 30px;
+    background: #090909;
+    color: white;
+}
+
+.contact-box .btn:hover { background: #333; }
+
+footer {
+    border-top: 1px solid var(--border);
+    padding: 30px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer-content p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    font-size: 12px;
+    color: #999;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media(max-width:800px) {
+    .nav-links { display: none; }
+    .hero { padding: 100px 0 85px; }
+    .hero h1 { letter-spacing: -2.5px; }
+    section { padding: 75px 0; }
+    .section-heading { flex-direction: column; align-items: start; }
+    .section-title { font-size: 38px; }
+    .services-grid,.portfolio-grid,.about-grid { grid-template-columns: 1fr; }
+    .about-grid { gap: 30px; }
+    .about-title { font-size: 40px; }
+    .process-grid { grid-template-columns: repeat(2,1fr); }
+    .contact-box { padding: 40px 25px; }
+    .footer-content { flex-direction: column; align-items: start; }
+}
+
+@media(max-width:480px) {
+    .process-grid { grid-template-columns: 1fr; }
+    .nav-cta { padding: 9px 14px; font-size: 12px; }
+    .logo { font-size: 15px; }
 }
 </style>
 </head>
+
 <body>
 
 <header>
-<div class="container">
-<nav>
-<a href="#" class="logo">DAVIDS<span>.</span>STUDIO</a>
-<div class="navlinks">
-<a href="#work">Work</a>
-<a href="#services">Services</a>
-<a href="#pricing">Pricing</a>
-<a href="#contact">Contact</a>
-</div>
-<a class="btn nav-cta" href="#contact">Let's Talk</a>
-</nav>
+<div class="container nav">
+    <a href="#" class="logo">DIGITAL <span>GROWTH STUDIO.</span></a>
+
+    <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Our Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#process">Process</a></li>
+    </ul>
+
+    <a href="#contact" class="nav-cta">Let's Talk ↗</a>
 </div>
 </header>
 
 <main>
 
 <section class="hero">
-<div class="container">
-<div class="eyebrow">INDEPENDENT WEB DESIGN STUDIO</div>
-<h1>Websites that make your business <span>stand out.</span></h1>
-<p>Modern, professional and mobile-friendly websites for small businesses. Build a stronger online presence and make a great first impression.</p>
-<div class="hero-actions">
-<a class="btn" href="#contact">Get a Free Quote</a>
-<a class="btn btn-outline" href="#work">Explore My Work</a>
-</div>
-<div class="trust">
-<span>Modern Design</span>
-<span>Mobile Friendly</span>
-<span>Personal Communication</span>
-</div>
-</div>
-</section>
+<div class="container reveal">
+    <div class="label"><span class="dot"></span>DIGITAL STUDIO FOR GROWING BUSINESSES</div>
 
-<section id="work">
-<div class="container">
-<h2 class="section-title">Selected Projects</h2>
-<p class="section-desc">Website concepts created for businesses in different industries.</p>
-<div class="projects">
+    <h1>
+        We build digital experiences
+        <span>that move businesses forward.</span>
+    </h1>
 
-<article class="project">
-<div class="preview">
-<iframe src="https://davadanilovs.github.io/brightnest-website/" title="BrightNest website preview" loading="lazy"></iframe>
-<div class="preview-label">LIVE WEBSITE PREVIEW</div>
-</div>
-<div class="project-info">
-<div class="project-category">CLEANING SERVICES</div>
-<h3>BrightNest Cleaning</h3>
-<p>A clean and welcoming website concept for a professional cleaning service.</p>
-<a class="project-link" href="https://davadanilovs.github.io/brightnest-website/" target="_blank" rel="noopener">Explore Project ↗</a>
-</div>
-</article>
+    <p class="hero-text">
+        Modern websites and digital solutions designed
+        to help businesses grow, stand out, and connect with customers.
+    </p>
 
-<article class="project">
-<div class="preview">
-<iframe src="https://davadanilovs.github.io/autoshine-detailing/" title="AutoShine website preview" loading="lazy"></iframe>
-<div class="preview-label">LIVE WEBSITE PREVIEW</div>
-</div>
-<div class="project-info">
-<div class="project-category">AUTOMOTIVE</div>
-<h3>AutoShine Detailing</h3>
-<p>A modern website concept showcasing automotive detailing services.</p>
-<a class="project-link" href="https://davadanilovs.github.io/autoshine-detailing/" target="_blank" rel="noopener">Explore Project ↗</a>
-</div>
-</article>
-
-<article class="project">
-<div class="preview">
-<iframe src="https://davadanilovs.github.io/greenleaf-landscaping/" title="GreenLeaf website preview" loading="lazy"></iframe>
-<div class="preview-label">LIVE WEBSITE PREVIEW</div>
-</div>
-<div class="project-info">
-<div class="project-category">LANDSCAPING</div>
-<h3>GreenLeaf Landscaping</h3>
-<p>A fresh design concept for a landscaping and lawn care business.</p>
-<a class="project-link" href="https://davadanilovs.github.io/greenleaf-landscaping/" target="_blank" rel="noopener">Explore Project ↗</a>
-</div>
-</article>
-
-<article class="project">
-<div class="preview">
-<iframe src="https://davadanilovs.github.io/prime-home-services/" title="Prime Home Services website preview" loading="lazy"></iframe>
-<div class="preview-label">LIVE WEBSITE PREVIEW</div>
-</div>
-<div class="project-info">
-<div class="project-category">HOME SERVICES</div>
-<h3>Prime Home Services</h3>
-<p>A professional website concept for home improvement and maintenance services.</p>
-<a class="project-link" href="https://davadanilovs.github.io/prime-home-services/" target="_blank" rel="noopener">Explore Project ↗</a>
-</div>
-</article>
-
-</div>
+    <div class="hero-buttons">
+        <a href="#work" class="btn btn-primary">Explore Our Work ↗</a>
+        <a href="#services" class="btn btn-secondary">Our Services</a>
+    </div>
 </div>
 </section>
 
 <section id="services">
 <div class="container">
-<h2 class="section-title">What I Offer</h2>
-<p class="section-desc">Everything you need to establish a professional online presence.</p>
-<div class="services">
-<div class="service">
-<div class="service-icon">✦</div>
-<h3>Custom Website Design</h3>
-<p>A modern layout designed around your business, services and customers.</p>
-</div>
-<div class="service">
-<div class="service-icon">▣</div>
-<h3>Mobile-Friendly Layout</h3>
-<p>A responsive website that looks great on phones, tablets and computers.</p>
-</div>
-<div class="service">
-<div class="service-icon">↗</div>
-<h3>Clear Call to Action</h3>
-<p>Easy-to-find contact information and buttons that help visitors take the next step.</p>
-</div>
-</div>
+    <div class="section-heading reveal">
+        <div>
+            <div class="label">WHAT WE DO</div>
+            <h2 class="section-title">Digital solutions.<br>Real business impact.</h2>
+        </div>
+        <p class="section-subtitle">
+            We help businesses build a stronger digital presence
+            through modern design and practical solutions.
+        </p>
+    </div>
+
+    <div class="services-grid">
+        <div class="service-card reveal">
+            <span class="service-number">01 / WEB DESIGN</span>
+            <h3>Website Design & Development</h3>
+            <p>Modern, responsive websites designed to make your business look professional and connect with customers.</p>
+            <div class="service-price">Starting at $99</div>
+        </div>
+
+        <div class="service-card reveal">
+            <span class="service-number">02 / REDESIGN</span>
+            <h3>Website Redesign</h3>
+            <p>We transform outdated websites into modern, clean, and user-friendly digital experiences.</p>
+            <div class="service-price">Starting at $149</div>
+        </div>
+
+        <div class="service-card reveal">
+            <span class="service-number">03 / DIGITAL</span>
+            <h3>Digital Solutions</h3>
+            <p>Practical digital improvements that help your business work smarter and improve its online presence.</p>
+            <div class="service-price">Custom projects</div>
+        </div>
+
+        <div class="service-card reveal">
+            <span class="service-number">04 / RESPONSIVE</span>
+            <h3>Mobile Optimization</h3>
+            <p>Seamless experiences across mobile phones, tablets, laptops, and desktop screens.</p>
+            <div class="service-price">Included with websites</div>
+        </div>
+    </div>
 </div>
 </section>
 
-<section id="pricing">
+<section id="work">
 <div class="container">
-<div class="pricing">
-<div>
-<div class="price-label">SIMPLE STARTING PRICE</div>
-<div class="price">$99 <span>/ starting price</span></div>
-<p class="price-copy">A professional one-page website for a small business. Final pricing depends on the features and content your project needs.</p>
+    <div class="section-heading reveal">
+        <div>
+            <div class="label">SELECTED WORK</div>
+            <h2 class="section-title">Ideas turned into<br>digital experiences.</h2>
+        </div>
+        <p class="section-subtitle">
+            A collection of website concepts exploring modern design
+            for different industries.
+        </p>
+    </div>
+
+    <div class="portfolio-grid">
+
+        <a href="https://davilanilovs.github.io/brightnest-website/" target="_blank" rel="noopener" class="project reveal">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=85" alt="BrightNest Cleaning" loading="lazy">
+            </div>
+            <div class="project-info">
+                <div><h3>BrightNest Cleaning</h3><p>Cleaning Services / Website Concept</p></div>
+                <span class="project-arrow">↗</span>
+            </div>
+        </a>
+
+        <a href="https://davilanilovs.github.io/autoshine-detailing/" target="_blank" rel="noopener" class="project reveal">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1601362849600-207f8b9d9e5e?auto=format&fit=crop&w=1200&q=85" alt="AutoShine Detailing" loading="lazy">
+            </div>
+            <div class="project-info">
+                <div><h3>AutoShine Detailing</h3><p>Automotive / Website Concept</p></div>
+                <span class="project-arrow">↗</span>
+            </div>
+        </a>
+
+        <a href="https://davilanilovs.github.io/greenleaf-landscaping/" target="_blank" rel="noopener" class="project reveal">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1200&q=85" alt="GreenLeaf Landscaping" loading="lazy">
+            </div>
+            <div class="project-info">
+                <div><h3>GreenLeaf Landscaping</h3><p>Landscaping / Website Concept</p></div>
+                <span class="project-arrow">↗</span>
+            </div>
+        </a>
+
+        <a href="https://davilanilovs.github.io/prime-home-services/" target="_blank" rel="noopener" class="project reveal">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85" alt="Prime Home Services" loading="lazy">
+            </div>
+            <div class="project-info">
+                <div><h3>Prime Home Services</h3><p>Home Services / Website Concept</p></div>
+                <span class="project-arrow">↗</span>
+            </div>
+        </a>
+
+    </div>
 </div>
-<div class="price-copy">
-<strong>What can be included:</strong>
-<ul>
-<li>Custom one-page website</li>
-<li>Mobile-friendly design</li>
-<li>Business services and contact section</li>
-<li>Links to your social media</li>
-<li>Help with publishing your website</li>
-</ul>
-<a class="btn" href="https://contra.com/davids_danilovs_0kgonjw7" target="_blank" rel="noopener">Request a Quote</a>
-</div>
-</div>
+</section>
+
+<section id="about">
+<div class="container">
+    <div class="about-grid reveal">
+        <div>
+            <div class="label">ABOUT THE STUDIO</div>
+            <h2 class="about-title">We believe every business deserves a better digital presence.</h2>
+        </div>
+
+        <div class="about-text">
+            <p>Digital Growth Studio is an independent digital studio focused on helping small businesses build a stronger online presence.</p>
+            <p>We combine modern design, straightforward communication, and practical digital solutions to create websites that help businesses present themselves professionally and connect with customers.</p>
+            <p>Our focus is simple: thoughtful design, reliable work, and solutions built around each business.</p>
+        </div>
+    </div>
 </div>
 </section>
 
 <section id="process">
 <div class="container">
-<h2 class="section-title">How It Works</h2>
-<p class="section-desc">A straightforward process from the first message to your finished website.</p>
-<div class="steps">
-<div class="step">
-<div class="step-number">STEP 01</div>
-<h3>Tell Me About Your Business</h3>
-<p>Share your business details, goals and what you need from your website.</p>
-</div>
-<div class="step">
-<div class="step-number">STEP 02</div>
-<h3>Plan the Design</h3>
-<p>We agree on the structure, style and content for your website.</p>
-</div>
-<div class="step">
-<div class="step-number">STEP 03</div>
-<h3>Build Your Website</h3>
-<p>I create the website and share it with you for feedback.</p>
-</div>
-<div class="step">
-<div class="step-number">STEP 04</div>
-<h3>Launch</h3>
-<p>After approval, we prepare the website for publication.</p>
-</div>
-</div>
+    <div class="section-heading reveal">
+        <div>
+            <div class="label">HOW WE WORK</div>
+            <h2 class="section-title">Simple process.<br>Thoughtful results.</h2>
+        </div>
+        <p class="section-subtitle">
+            A straightforward process designed to make every project clear and organized.
+        </p>
+    </div>
+
+    <div class="process-grid">
+        <div class="process-card reveal">
+            <span>STEP 01</span>
+            <h3>Discover</h3>
+            <p>We learn about your business, goals, and what you need.</p>
+        </div>
+        <div class="process-card reveal">
+            <span>STEP 02</span>
+            <h3>Plan</h3>
+            <p>We organize the structure, direction, and design.</p>
+        </div>
+        <div class="process-card reveal">
+            <span>STEP 03</span>
+            <h3>Build</h3>
+            <p>We create your website and refine the details.</p>
+        </div>
+        <div class="process-card reveal">
+            <span>STEP 04</span>
+            <h3>Launch</h3>
+            <p>We review the final project and prepare it for launch.</p>
+        </div>
+    </div>
 </div>
 </section>
 
-<section class="about" id="about">
+<section id="contact" class="contact-section">
 <div class="container">
-<div class="about-inner">
-<div class="eyebrow">ABOUT DAVIDS STUDIO</div>
-<h2 class="section-title">Helping small businesses look professional online.</h2>
-<p>I'm an independent web designer focused on creating clean, modern websites for small businesses. I believe a business website should be clear, easy to use and make it simple for customers to understand what you offer.</p>
-<p>My focus is practical design, responsive layouts and straightforward communication throughout the project.</p>
-</div>
-</div>
-</section>
+    <div class="contact-box reveal">
+        <div class="label"><span class="dot"></span>HAVE A PROJECT IN MIND?</div>
+        <h2>Let's create something that moves you forward.</h2>
+        <p>Tell us about your business, your goals, and what you're looking for. Let's explore how we can help.</p>
 
-<section id="faq">
-<div class="container">
-<h2 class="section-title">Frequently Asked Questions</h2>
-<p class="section-desc">A few things you might want to know before getting started.</p>
-<div class="faq-list">
-<div class="faq">
-<h3>How much does a website cost?</h3>
-<p>One-page website projects start at $99. The final price depends on the scope and features you need.</p>
-</div>
-<div class="faq">
-<h3>Will my website work on phones?</h3>
-<p>Yes. Websites are designed to adapt to mobile phones, tablets and desktop screens.</p>
-</div>
-<div class="faq">
-<h3>How do I get started?</h3>
-<p>Send me a message through Contra with a short description of your business and project.</p>
-</div>
-<div class="faq">
-<h3>Can I request changes?</h3>
-<p>Yes. We can discuss feedback and revisions as part of the project scope before starting.</p>
-</div>
-</div>
-</div>
-</section>
-
-<section id="contact">
-<div class="container">
-<div class="contact">
-<div class="eyebrow">LET'S WORK TOGETHER</div>
-<h2>Ready to build your website?</h2>
-<p>Tell me about your business and what you are looking for. Let's create a website that gives your business a strong online presence.</p>
-<a class="btn" href="https://contra.com/davids_danilovs_0kgonjw7" target="_blank" rel="noopener">Get a Free Quote on Contra ↗</a>
-</div>
+        <!-- Replace YOUR_EMAIL_HERE with your business email -->
+        <a href="mailto:YOUR_EMAIL_HERE?subject=Website%20Project%20Inquiry" class="btn">
+            Start a Conversation ↗
+        </a>
+    </div>
 </div>
 </section>
 
 </main>
 
 <footer>
-<div class="container">© 2026 Davids Studio. Portfolio website concepts.</div>
+<div class="container footer-content">
+    <a href="#" class="logo">DIGITAL <span>GROWTH STUDIO.</span></a>
+    <p>© <span id="year"></span> Digital Growth Studio. All rights reserved.</p>
+    <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
 </footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(element => {
+    observer.observe(element);
+});
+</script>
 
 </body>
 </html>
