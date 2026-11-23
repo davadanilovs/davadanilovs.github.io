@@ -5,807 +5,1043 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Digital Growth Studio | Websites That Grow Businesses</title>
-<meta name="description" content="Digital Growth Studio creates premium, modern websites for small businesses. Build your online presence and grow your business.">
+<title>Digital Growth Studio | Premium Websites for Small Businesses</title>
+<meta name="description" content="Digital Growth Studio creates modern, premium websites for small businesses. Professional web design, responsive layouts and affordable packages.">
+<meta name="theme-color" content="#090a0d">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg: #080b0b;
-  --surface: #101515;
-  --surface2: #151c1b;
-  --text: #f4f7f4;
-  --muted: #9ba8a1;
-  --green: #b5f36d;
+  --bg: #090a0d;
+  --surface: #111318;
+  --surface2: #171a20;
+  --text: #f5f4ef;
+  --muted: #9699a2;
+  --gold: #c9a76a;
+  --gold-light: #e7cf9d;
   --border: rgba(255,255,255,.09);
+  --max: 1180px;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
 body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'DM Sans', sans-serif;
-  line-height: 1.6;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'DM Sans',sans-serif;
+  line-height:1.65;
+  overflow-x:hidden;
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
+a { color:inherit; text-decoration:none; }
+button { font:inherit; }
 
 .container {
-  width: min(1160px, 90%);
-  margin: auto;
+  width:min(var(--max), calc(100% - 48px));
+  margin:auto;
+}
+
+.gold { color:var(--gold-light); }
+
+.top-line {
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
 }
 
 header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(8,11,11,.88);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(9,10,13,.88);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
 }
 
-nav {
-  height: 82px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.nav {
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
 .logo {
-  font-family: 'Manrope', sans-serif;
-  font-size: 19px;
-  font-weight: 800;
-  letter-spacing: -.7px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-family:Manrope,sans-serif;
+  font-weight:800;
+  letter-spacing:-.7px;
+  font-size:18px;
 }
 
-.logo span {
-  color: var(--green);
+.logo-mark {
+  width:37px;
+  height:37px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--gold);
+  color:var(--gold-light);
+  font-size:17px;
 }
 
 .nav-links {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  color: var(--muted);
-  font-size: 13px;
+  display:flex;
+  align-items:center;
+  gap:32px;
 }
 
-.nav-links a:hover {
-  color: var(--green);
+.nav-links a {
+  color:#b9bbc1;
+  font-size:13px;
+  transition:.25s;
 }
 
-.nav-cta, .button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--green);
-  color: #10150d;
-  font-weight: 700;
-  padding: 13px 22px;
-  border-radius: 7px;
-  font-size: 13px;
-  transition: .25s;
+.nav-links a:hover { color:var(--gold-light); }
+
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  padding:14px 23px;
+  background:var(--gold);
+  color:#101115;
+  font-size:13px;
+  font-weight:800;
+  border:1px solid var(--gold);
+  transition:.25s;
+  cursor:pointer;
 }
 
-.nav-cta:hover, .button:hover {
-  background: white;
-  transform: translateY(-2px);
+.btn:hover {
+  background:var(--gold-light);
+  transform:translateY(-2px);
+}
+
+.btn-outline {
+  background:transparent;
+  color:var(--text);
+  border-color:rgba(255,255,255,.2);
+}
+
+.btn-outline:hover {
+  color:var(--gold-light);
+  border-color:var(--gold);
+  background:transparent;
+}
+
+.menu-btn {
+  display:none;
+  background:none;
+  color:white;
+  border:0;
+  font-size:26px;
+  cursor:pointer;
 }
 
 .hero {
-  padding: 115px 0 105px;
-  position: relative;
-  overflow: hidden;
+  min-height:690px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
 }
 
 .hero::before {
-  content: "";
-  position: absolute;
-  width: 550px;
-  height: 550px;
-  right: -180px;
-  top: -150px;
-  background: radial-gradient(circle, rgba(181,243,109,.13), transparent 68%);
-  pointer-events: none;
+  content:"";
+  position:absolute;
+  width:650px;
+  height:650px;
+  right:-180px;
+  top:-80px;
+  background:radial-gradient(circle,rgba(201,167,106,.12),transparent 68%);
+  pointer-events:none;
+}
+
+.hero-content {
+  position:relative;
+  max-width:850px;
+  padding:100px 0;
 }
 
 .eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--green);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 25px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--gold-light);
+  font-size:11px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  margin-bottom:27px;
 }
 
 .eyebrow::before {
-  content: "";
-  width: 24px;
-  height: 1px;
-  background: var(--green);
+  content:"";
+  width:32px;
+  height:1px;
+  background:var(--gold);
 }
 
-h1, h2, h3 {
-  font-family: 'Manrope', sans-serif;
-  line-height: 1.12;
+h1 {
+  font-family:Manrope,sans-serif;
+  font-size:clamp(46px,7.5vw,88px);
+  line-height:1.07;
+  letter-spacing:-5px;
+  font-weight:700;
+  max-width:900px;
 }
 
-.hero h1 {
-  font-size: clamp(44px, 7vw, 78px);
-  max-width: 850px;
-  letter-spacing: -4px;
-  font-weight: 800;
-}
-
-.hero h1 span {
-  color: var(--green);
-}
-
-.hero-description {
-  color: var(--muted);
-  max-width: 520px;
-  margin: 27px 0 32px;
-  font-size: 16px;
+.hero p {
+  color:var(--muted);
+  font-size:17px;
+  max-width:590px;
+  margin:28px 0 35px;
 }
 
 .hero-buttons {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
 }
 
-.button-outline {
-  border: 1px solid var(--border);
-  padding: 13px 22px;
-  border-radius: 7px;
-  font-size: 13px;
-  font-weight: 600;
-  transition: .25s;
+.hero-note {
+  display:flex;
+  gap:25px;
+  margin-top:55px;
+  flex-wrap:wrap;
 }
 
-.button-outline:hover {
-  border-color: var(--green);
-  color: var(--green);
+.hero-note span {
+  font-size:12px;
+  color:#a4a6ae;
 }
 
-.hero-bottom {
-  display: flex;
-  gap: 55px;
-  margin-top: 85px;
-  padding-top: 25px;
-  border-top: 1px solid var(--border);
-  flex-wrap: wrap;
+.hero-note span::before {
+  content:"✦";
+  color:var(--gold);
+  margin-right:9px;
 }
 
-.hero-stat strong {
-  display: block;
-  font-family: 'Manrope', sans-serif;
-  font-size: 24px;
+.section {
+  padding:110px 0;
+  border-top:1px solid var(--border);
 }
 
-.hero-stat span {
-  color: var(--muted);
-  font-size: 12px;
-}
-
-section {
-  padding: 95px 0;
+.section-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:30px;
+  margin-bottom:48px;
 }
 
 .section-label {
-  color: var(--green);
-  text-transform: uppercase;
-  font-size: 11px;
-  letter-spacing: 2px;
-  font-weight: 700;
-  margin-bottom: 15px;
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:11px;
+  font-weight:700;
+  margin-bottom:13px;
 }
 
-.section-heading {
-  font-size: clamp(32px, 5vw, 49px);
-  letter-spacing: -2px;
-  max-width: 650px;
+h2 {
+  font-family:Manrope,sans-serif;
+  font-size:clamp(32px,4vw,49px);
+  line-height:1.15;
+  letter-spacing:-2px;
 }
 
 .section-description {
-  color: var(--muted);
-  max-width: 550px;
-  margin-top: 17px;
-  font-size: 14px;
+  color:var(--muted);
+  max-width:400px;
+  font-size:14px;
 }
 
 .projects {
-  background: #0c1010;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
 }
 
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-  margin-top: 48px;
+.project {
+  background:var(--surface);
+  border:1px solid var(--border);
+  overflow:hidden;
+  transition:.3s;
 }
 
-.project-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: .3s;
+.project:hover {
+  transform:translateY(-5px);
+  border-color:rgba(201,167,106,.5);
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(181,243,109,.45);
+.project-preview {
+  height:270px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:25px;
 }
 
-.project-image {
-  height: 270px;
-  overflow: hidden;
-  background: #1b2421;
+.preview-cleaning {
+  background:linear-gradient(135deg,#dbe9e3,#9eb9aa);
+  color:#173b30;
+}
+.preview-auto {
+  background:linear-gradient(135deg,#131923,#39485c);
+  color:#fff;
+}
+.preview-landscape {
+  background:linear-gradient(135deg,#dce9d3,#91ad7c);
+  color:#21402a;
+}
+.preview-home {
+  background:linear-gradient(135deg,#e6ddd0,#bba58b);
+  color:#342a20;
 }
 
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: .5s;
+.preview-window {
+  width:100%;
+  max-width:390px;
+  min-height:190px;
+  background:rgba(255,255,255,.92);
+  box-shadow:0 20px 50px rgba(0,0,0,.18);
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
 }
 
-.project-card:hover .project-image img {
-  transform: scale(1.04);
+.preview-top {
+  display:flex;
+  justify-content:space-between;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1px;
 }
 
-.project-info {
-  padding: 25px;
+.preview-heading {
+  font-family:Manrope,sans-serif;
+  font-size:28px;
+  font-weight:800;
+  line-height:1.08;
+  max-width:260px;
+  margin:20px 0;
 }
 
-.project-type {
-  color: var(--green);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-size: 10px;
-  font-weight: 700;
+.preview-tag {
+  font-size:9px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  opacity:.65;
+}
+
+.preview-line {
+  width:85px;
+  height:22px;
+  background:currentColor;
+  opacity:.85;
+}
+
+.project-info { padding:25px; }
+
+.project-category {
+  color:var(--gold);
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:700;
 }
 
 .project-info h3 {
-  font-size: 22px;
-  margin: 9px 0;
+  font-family:Manrope,sans-serif;
+  font-size:23px;
+  margin:8px 0;
 }
 
 .project-info p {
-  color: var(--muted);
-  font-size: 13px;
-  margin-bottom: 20px;
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:20px;
 }
 
 .project-link {
-  font-size: 12px;
-  font-weight: 700;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:var(--gold-light);
+  font-size:12px;
+  font-weight:700;
 }
 
-.project-link span {
-  color: var(--green);
-  margin-left: 5px;
-}
+.project-link:hover { gap:16px; }
 
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 45px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px;
 }
 
 .service-card {
-  padding: 30px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  border-radius: 10px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  padding:32px 27px;
 }
 
 .service-number {
-  color: var(--green);
-  font-size: 12px;
-  margin-bottom: 35px;
+  color:var(--gold);
+  font-size:12px;
+  letter-spacing:2px;
 }
 
 .service-card h3 {
-  font-size: 20px;
-  margin-bottom: 12px;
+  font-family:Manrope,sans-serif;
+  font-size:21px;
+  margin:25px 0 12px;
 }
 
 .service-card p {
-  font-size: 13px;
-  color: var(--muted);
+  color:var(--muted);
+  font-size:13px;
 }
 
-.pricing {
-  background: #0c1010;
+.service-icon {
+  color:var(--gold-light);
+  font-size:26px;
 }
 
 .pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 45px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  align-items:stretch;
 }
 
 .price-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  padding: 30px;
-  border-radius: 10px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  padding:32px 27px;
+  display:flex;
+  flex-direction:column;
 }
 
 .price-card.featured {
-  border-color: var(--green);
-  background: #151d16;
+  border-color:var(--gold);
+  background:linear-gradient(160deg,#1b1a17,#111318 70%);
 }
 
-.price-card h3 {
-  font-size: 19px;
+.price-type {
+  color:var(--gold-light);
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:700;
 }
 
-.price-card .price {
-  font-family: 'Manrope', sans-serif;
-  font-size: 39px;
-  font-weight: 800;
-  margin: 20px 0 5px;
+.price {
+  font-family:Manrope,sans-serif;
+  font-size:48px;
+  font-weight:800;
+  letter-spacing:-3px;
+  margin:17px 0 5px;
 }
 
-.price-card .price-note {
-  color: var(--muted);
-  font-size: 12px;
-  padding-bottom: 22px;
-  border-bottom: 1px solid var(--border);
+.price-description {
+  color:var(--muted);
+  font-size:13px;
+  min-height:48px;
 }
 
-.price-card ul {
-  list-style: none;
-  margin: 23px 0;
+.price-divider {
+  height:1px;
+  background:var(--border);
+  margin:24px 0;
 }
 
-.price-card li {
-  color: #c4cec7;
-  font-size: 12px;
-  margin: 12px 0;
+.features {
+  list-style:none;
+  flex:1;
+  margin-bottom:25px;
 }
 
-.price-card li::before {
-  content: "✓";
-  color: var(--green);
-  margin-right: 10px;
+.features li {
+  color:#c3c4ca;
+  font-size:13px;
+  margin-bottom:13px;
 }
 
-.price-card .button {
-  width: 100%;
+.features li::before {
+  content:"✓";
+  color:var(--gold);
+  margin-right:10px;
 }
+
+.price-card .btn { width:100%; }
 
 .process-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-top: 45px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
 }
 
-.process-item {
-  border-top: 1px solid var(--border);
-  padding-top: 22px;
+.process-step {
+  border-top:1px solid var(--gold);
+  padding-top:23px;
 }
 
-.process-item span {
-  color: var(--green);
-  font-size: 12px;
+.process-step .number {
+  color:var(--gold);
+  font-family:Manrope,sans-serif;
+  font-size:30px;
+  font-weight:800;
 }
 
-.process-item h3 {
-  font-size: 17px;
-  margin: 18px 0 10px;
+.process-step h3 {
+  font-size:17px;
+  margin:14px 0 8px;
 }
 
-.process-item p {
-  color: var(--muted);
-  font-size: 12px;
+.process-step p {
+  font-size:13px;
+  color:var(--muted);
 }
+
+.about-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:65px;
+  align-items:center;
+}
+
+.about-text p {
+  color:var(--muted);
+  font-size:15px;
+  margin-top:20px;
+}
+
+.about-panel {
+  border:1px solid var(--border);
+  background:var(--surface);
+  padding:40px;
+}
+
+.about-panel h3 {
+  font-family:Manrope,sans-serif;
+  font-size:27px;
+  margin-bottom:20px;
+}
+
+.about-point {
+  padding:17px 0;
+  border-top:1px solid var(--border);
+  display:flex;
+  gap:15px;
+  align-items:center;
+  font-size:13px;
+  color:#c7c8ce;
+}
+
+.about-point span { color:var(--gold); }
 
 .contact {
-  text-align: center;
-  background: radial-gradient(ellipse at center, #18241a, #080b0b 70%);
-  padding: 115px 0;
+  text-align:center;
+  background:radial-gradient(ellipse at center,rgba(201,167,106,.10),transparent 65%);
+  padding:120px 0;
 }
 
-.contact .section-heading {
-  margin: auto;
-  max-width: 720px;
+.contact h2 {
+  max-width:750px;
+  margin:0 auto;
 }
 
-.contact .section-description {
-  margin: 20px auto 30px;
-}
-
-.contact-email {
-  display: block;
-  color: var(--green);
-  margin-top: 25px;
-  font-size: 14px;
+.contact p {
+  color:var(--muted);
+  max-width:520px;
+  margin:22px auto 30px;
+  font-size:14px;
 }
 
 footer {
-  border-top: 1px solid var(--border);
-  padding: 30px 0;
+  border-top:1px solid var(--border);
+  padding:35px 0;
 }
 
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
+.footer-content {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
 }
 
-footer p, footer a {
-  color: var(--muted);
-  font-size: 11px;
+.footer-copy {
+  color:#777a83;
+  font-size:11px;
 }
 
-footer a:hover {
-  color: var(--green);
+.footer-links {
+  display:flex;
+  gap:23px;
+  font-size:12px;
+  color:#a5a7ae;
 }
 
-@media(max-width: 800px) {
-  .project-grid, .pricing-grid {
-    grid-template-columns: 1fr;
-  }
+.footer-links a:hover { color:var(--gold-light); }
 
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .process-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .hero {
-    padding: 85px 0;
-  }
+.reveal {
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .7s ease, transform .7s ease;
 }
 
-@media(max-width: 560px) {
-  nav {
-    height: 70px;
-  }
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0);
+}
 
+@media(max-width:850px) {
+  .nav-links { gap:17px; }
+  .nav-links a { font-size:12px; }
+  .services-grid,.pricing-grid { grid-template-columns:1fr 1fr; }
+  .process-grid { grid-template-columns:1fr 1fr; }
+  .about-grid { gap:30px; }
+}
+
+@media(max-width:650px) {
+  .container { width:calc(100% - 34px); }
+  .nav { height:70px; }
+  .menu-btn { display:block; }
   .nav-links {
-    display: none;
+    display:none;
+    position:absolute;
+    top:70px;
+    left:0;
+    right:0;
+    padding:25px;
+    background:#101116;
+    border-bottom:1px solid var(--border);
+    flex-direction:column;
+    align-items:stretch;
+    gap:20px;
   }
+  .nav-links.open { display:flex; }
+  .nav-links a { font-size:14px; }
+  .nav .nav-cta { display:none; }
+  .hero { min-height:620px; }
+  .hero-content { padding:80px 0; }
+  h1 { letter-spacing:-2.5px; }
+  .hero p { font-size:15px; }
+  .section { padding:80px 0; }
+  .section-head { display:block; }
+  .section-description { margin-top:17px; }
+  .projects,.services-grid,.pricing-grid,.about-grid { grid-template-columns:1fr; }
+  .project-preview { height:230px; }
+  .process-grid { grid-template-columns:1fr 1fr; gap:25px 16px; }
+  .about-panel { padding:27px; }
+  .contact { padding:90px 0; }
+  .footer-content { flex-direction:column; align-items:flex-start; }
+}
 
-  .hero h1 {
-    letter-spacing: -2px;
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    scroll-behavior:auto!important;
+    animation:none!important;
+    transition:none!important;
   }
-
-  .hero-bottom {
-    gap: 25px;
-  }
-
-  .services-grid, .process-grid {
-    grid-template-columns: 1fr;
-  }
-
-  section {
-    padding: 70px 0;
-  }
-
-  .project-image {
-    height: 220px;
-  }
+  .reveal { opacity:1; transform:none; }
 }
 </style>
 </head>
 
 <body>
+<div class="top-line"></div>
 
 <header>
-  <div class="container">
-    <nav>
-      <a href="#" class="logo">DIGITAL<span>.</span>GROWTH</a>
+  <div class="container nav">
+    <a href="#home" class="logo">
+      <span class="logo-mark">D</span>
+      <span>Digital Growth <span class="gold">Studio</span></span>
+    </a>
 
-      <div class="nav-links">
-        <a href="#work">Our Work</a>
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#process">Process</a>
-      </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
 
-      <a class="nav-cta" href="https://mail.google.com/mail/?view=cm&fs=1&to=danilovs.strojka@gmail.com&su=Website%20Project%20Inquiry">Let's Talk ↗</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#work">Our Work</a>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </nav>
+
+    <a class="btn nav-cta" href="#contact">Start a Project ↗</a>
   </div>
 </header>
 
 <main>
-
-<section class="hero">
+<section class="hero" id="home">
   <div class="container">
-    <div class="eyebrow">Digital solutions for modern businesses</div>
+    <div class="hero-content reveal">
+      <div class="eyebrow">Independent Web Design Studio</div>
 
-    <h1>
-      Your business deserves a
-      <span>better online presence.</span>
-    </h1>
+      <h1>We build websites that make <span class="gold">businesses stand out.</span></h1>
 
-    <p class="hero-description">
-      We design and build modern, professional websites that help small businesses stand out, build trust, and connect with more customers.
-    </p>
+      <p>
+        Modern, professional websites designed to help small businesses
+        build trust, reach more customers, and grow online.
+      </p>
 
-    <div class="hero-buttons">
-      <a href="#work" class="button">Explore Our Work ↗</a>
-      <a href="#contact" class="button-outline">Start a Project</a>
-    </div>
-
-    <div class="hero-bottom">
-      <div class="hero-stat">
-        <strong>Modern</strong>
-        <span>Design approach</span>
+      <div class="hero-buttons">
+        <a class="btn" href="#work">Explore Our Work ↗</a>
+        <a class="btn btn-outline" href="#contact">Let's Talk</a>
       </div>
-      <div class="hero-stat">
-        <strong>Responsive</strong>
-        <span>On every device</span>
-      </div>
-      <div class="hero-stat">
-        <strong>Built to grow</strong>
-        <span>For small businesses</span>
+
+      <div class="hero-note">
+        <span>Modern Design</span>
+        <span>Mobile Friendly</span>
+        <span>Small Business Focus</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="projects" id="work">
+<section class="section" id="work">
   <div class="container">
-    <div class="section-label">Selected projects</div>
-    <h2 class="section-heading">Digital experiences built with purpose.</h2>
-    <p class="section-description">
-      A selection of website concepts created to demonstrate how modern design can present different types of businesses.
-    </p>
+    <div class="section-head reveal">
+      <div>
+        <div class="section-label">Selected Projects</div>
+        <h2>Our work speaks<br>for itself.</h2>
+      </div>
+      <p class="section-description">
+        A selection of website concepts created to demonstrate
+        different styles and solutions for service-based businesses.
+      </p>
+    </div>
 
-    <div class="project-grid">
-
-      <article class="project-card">
-        <div class="project-image">
-          <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1200&q=85" alt="BrightNest cleaning interior">
+    <div class="projects">
+      <article class="project reveal">
+        <div class="project-preview preview-cleaning">
+          <div class="preview-window">
+            <div class="preview-top"><span>BRIGHTNEST</span><span>HOME CLEANING</span></div>
+            <div>
+              <div class="preview-heading">A cleaner home. A brighter life.</div>
+              <div class="preview-line"></div>
+            </div>
+            <div class="preview-tag">Professional cleaning services</div>
+          </div>
         </div>
         <div class="project-info">
-          <div class="project-type">Cleaning Services · Concept</div>
+          <div class="project-category">Cleaning Services</div>
           <h3>BrightNest Cleaning</h3>
-          <p>A clean, welcoming website concept for a residential cleaning business.</p>
-          <a class="project-link" href="https://davadanilovs.github.io/brightnest-website/" target="_blank">View Project <span>↗</span></a>
+          <p>A welcoming and professional website concept for a residential cleaning business.</p>
+          <a class="project-link" href="https://davadanilovs.github.io/brightnest-website/" target="_blank" rel="noopener noreferrer">View Live Website ↗</a>
         </div>
       </article>
 
-      <article class="project-card">
-        <div class="project-image">
-          <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=85" alt="Professional car detailing">
+      <article class="project reveal">
+        <div class="project-preview preview-auto">
+          <div class="preview-window">
+            <div class="preview-top"><span>AUTOSHINE</span><span>DETAILING</span></div>
+            <div>
+              <div class="preview-heading">Bring back the showroom shine.</div>
+              <div class="preview-line"></div>
+            </div>
+            <div class="preview-tag">Premium auto detailing</div>
+          </div>
         </div>
         <div class="project-info">
-          <div class="project-type">Automotive · Concept</div>
+          <div class="project-category">Automotive</div>
           <h3>AutoShine Detailing</h3>
-          <p>A premium automotive website concept focused on professional presentation.</p>
-          <a class="project-link" href="https://davadanilovs.github.io/autoshine-detailing/" target="_blank">View Project <span>↗</span></a>
+          <p>A bold, polished design concept for an automotive detailing business.</p>
+          <a class="project-link" href="https://davadanilovs.github.io/autoshine-detailing/" target="_blank" rel="noopener noreferrer">View Live Website ↗</a>
         </div>
       </article>
 
-      <article class="project-card">
-        <div class="project-image">
-          <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1200&q=85" alt="Landscaped green garden">
+      <article class="project reveal">
+        <div class="project-preview preview-landscape">
+          <div class="preview-window">
+            <div class="preview-top"><span>GREENLEAF</span><span>LANDSCAPING</span></div>
+            <div>
+              <div class="preview-heading">Outdoor spaces. Beautifully transformed.</div>
+              <div class="preview-line"></div>
+            </div>
+            <div class="preview-tag">Landscaping & lawn care</div>
+          </div>
         </div>
         <div class="project-info">
-          <div class="project-type">Landscaping · Concept</div>
+          <div class="project-category">Landscaping</div>
           <h3>GreenLeaf Landscaping</h3>
-          <p>A fresh and natural website concept for a landscaping company.</p>
-          <a class="project-link" href="https://davadanilovs.github.io/greenleaf-landscaping/" target="_blank">View Project <span>↗</span></a>
+          <p>A fresh and natural website concept for landscaping and lawn care services.</p>
+          <a class="project-link" href="https://davadanilovs.github.io/greenleaf-landscaping/" target="_blank" rel="noopener noreferrer">View Live Website ↗</a>
         </div>
       </article>
 
-      <article class="project-card">
-        <div class="project-image">
-          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85" alt="Modern home interior">
+      <article class="project reveal">
+        <div class="project-preview preview-home">
+          <div class="preview-window">
+            <div class="preview-top"><span>PRIME HOME</span><span>SERVICES</span></div>
+            <div>
+              <div class="preview-heading">Your home. Our priority.</div>
+              <div class="preview-line"></div>
+            </div>
+            <div class="preview-tag">Reliable home services</div>
+          </div>
         </div>
         <div class="project-info">
-          <div class="project-type">Home Services · Concept</div>
+          <div class="project-category">Home Services</div>
           <h3>Prime Home Services</h3>
-          <p>A modern website concept designed for a home improvement business.</p>
-          <a class="project-link" href="https://davadanilovs.github.io/prime-home-services/" target="_blank">View Project <span>↗</span></a>
+          <p>A clean and trustworthy website concept for a home service provider.</p>
+          <a class="project-link" href="https://davadanilovs.github.io/prime-home-services/" target="_blank" rel="noopener noreferrer">View Live Website ↗</a>
         </div>
       </article>
-
     </div>
   </div>
 </section>
 
-<section id="services">
+<section class="section" id="services">
   <div class="container">
-    <div class="section-label">What we do</div>
-    <h2 class="section-heading">Everything your business needs to get online.</h2>
-    <p class="section-description">
-      Straightforward website solutions designed around your business and your customers.
-    </p>
+    <div class="section-head reveal">
+      <div>
+        <div class="section-label">What We Do</div>
+        <h2>Digital solutions<br>for real businesses.</h2>
+      </div>
+      <p class="section-description">
+        Everything you need to create a strong and professional
+        online presence for your business.
+      </p>
+    </div>
 
     <div class="services-grid">
-      <div class="service-card">
+      <article class="service-card reveal">
+        <div class="service-icon">✦</div>
         <div class="service-number">01 / DESIGN</div>
         <h3>Website Design</h3>
-        <p>Modern layouts, thoughtful details, and a professional look that reflects your business.</p>
-      </div>
+        <p>Modern layouts and thoughtful visual design that make your business look professional and memorable.</p>
+      </article>
 
-      <div class="service-card">
+      <article class="service-card reveal">
+        <div class="service-icon">⌘</div>
         <div class="service-number">02 / DEVELOPMENT</div>
         <h3>Website Development</h3>
-        <p>Responsive websites designed to work smoothly across phones, tablets, and computers.</p>
-      </div>
+        <p>Responsive websites built to work smoothly across phones, tablets, and desktop screens.</p>
+      </article>
 
-      <div class="service-card">
-        <div class="service-number">03 / OPTIMIZATION</div>
-        <h3>Mobile Optimization</h3>
-        <p>A clear and convenient experience for customers browsing on any device.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-number">04 / PRESENCE</div>
-        <h3>Business Websites</h3>
-        <p>Professional online pages that introduce your services and make contacting you easy.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-number">05 / EXPERIENCE</div>
-        <h3>User Experience</h3>
-        <p>Simple navigation and clear calls to action that help visitors find what they need.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-number">06 / SUPPORT</div>
-        <h3>Website Updates</h3>
-        <p>Help with content changes, design improvements, and future website updates.</p>
-      </div>
+      <article class="service-card reveal">
+        <div class="service-icon">↗</div>
+        <div class="service-number">03 / PRESENCE</div>
+        <h3>Online Presence</h3>
+        <p>Clear service information, contact options, and a structure that helps visitors take action.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="pricing" id="pricing">
+<section class="section" id="pricing">
   <div class="container">
-    <div class="section-label">Simple pricing</div>
-    <h2 class="section-heading">The right starting point for your business.</h2>
-    <p class="section-description">
-      Clear starting prices. Every project is discussed individually before work begins.
-    </p>
+    <div class="section-head reveal">
+      <div>
+        <div class="section-label">Transparent Pricing</div>
+        <h2>Simple packages.<br>Clear value.</h2>
+      </div>
+      <p class="section-description">
+        Straightforward starting packages for businesses at different
+        stages. Every project is scoped before work begins.
+      </p>
+    </div>
 
     <div class="pricing-grid">
-
-      <div class="price-card">
-        <h3>Starter</h3>
+      <article class="price-card reveal">
+        <div class="price-type">Starter</div>
         <div class="price">$99</div>
-        <div class="price-note">For businesses getting started online</div>
-        <ul>
+        <div class="price-description">A professional starting point for your online presence.</div>
+        <div class="price-divider"></div>
+        <ul class="features">
           <li>One-page website</li>
-          <li>Modern custom layout</li>
-          <li>Mobile-friendly design</li>
+          <li>Responsive design</li>
           <li>Services and contact section</li>
-          <li>One revision</li>
+          <li>Call and email buttons</li>
+          <li>One revision round</li>
         </ul>
-        <a class="button" href="https://mail.google.com/mail/?view=cm&fs=1&to=danilovs.strojka@gmail.com&su=Starter%20Website%20Inquiry">Get Started</a>
-      </div>
+        <a class="btn btn-outline" href="#contact">Choose Starter ↗</a>
+      </article>
 
-      <div class="price-card featured">
-        <h3>Business</h3>
+      <article class="price-card featured reveal">
+        <div class="price-type">Business · Popular</div>
         <div class="price">$249</div>
-        <div class="price-note">For businesses ready to grow</div>
-        <ul>
-          <li>Up to 3 pages</li>
-          <li>Custom website design</li>
-          <li>Mobile-friendly layout</li>
-          <li>Services and contact sections</li>
+        <div class="price-description">More room to showcase your business and services.</div>
+        <div class="price-divider"></div>
+        <ul class="features">
+          <li>Up to three pages</li>
+          <li>Custom visual design</li>
+          <li>Responsive layout</li>
+          <li>Contact section</li>
           <li>Two revision rounds</li>
         </ul>
-        <a class="button" href="https://mail.google.com/mail/?view=cm&fs=1&to=danilovs.strojka@gmail.com&su=Business%20Website%20Inquiry">Get Started</a>
-      </div>
+        <a class="btn" href="#contact">Choose Business ↗</a>
+      </article>
 
-      <div class="price-card">
-        <h3>Premium</h3>
+      <article class="price-card reveal">
+        <div class="price-type">Premium</div>
         <div class="price">$399</div>
-        <div class="price-note">For a more complete online presence</div>
-        <ul>
-          <li>Up to 5 pages</li>
+        <div class="price-description">A more complete website for an established business.</div>
+        <div class="price-divider"></div>
+        <ul class="features">
+          <li>Up to five pages</li>
           <li>Custom premium design</li>
-          <li>Mobile-friendly layout</li>
-          <li>Additional business sections</li>
+          <li>Gallery or portfolio section</li>
+          <li>Responsive layout</li>
           <li>Two revision rounds</li>
         </ul>
-        <a class="button" href="https://mail.google.com/mail/?view=cm&fs=1&to=danilovs.strojka@gmail.com&su=Premium%20Website%20Inquiry">Get Started</a>
-      </div>
-
+        <a class="btn btn-outline" href="#contact">Choose Premium ↗</a>
+      </article>
     </div>
-    <p style="color:var(--muted);font-size:11px;margin-top:20px;">
-      Prices are starting estimates. Domain, hosting, paid third-party services, and additional features may cost extra.
+
+    <p style="color:var(--muted);font-size:11px;margin-top:22px;">
+      Prices are starting rates. Domain, hosting, paid third-party services,
+      advanced integrations, and ongoing maintenance are quoted separately.
     </p>
   </div>
 </section>
 
-<section id="process">
+<section class="section" id="process">
   <div class="container">
-    <div class="section-label">How it works</div>
-    <h2 class="section-heading">A simple process. A better result.</h2>
+    <div class="section-head reveal">
+      <div>
+        <div class="section-label">Our Process</div>
+        <h2>From idea to launch.</h2>
+      </div>
+      <p class="section-description">
+        A simple, transparent process that keeps every project organized.
+      </p>
+    </div>
 
     <div class="process-grid">
-      <div class="process-item">
-        <span>STEP 01</span>
+      <div class="process-step reveal">
+        <div class="number">01</div>
         <h3>Discovery</h3>
-        <p>We learn about your business, goals, services, and the customers you want to reach.</p>
+        <p>We learn about your business, goals, and website requirements.</p>
       </div>
-
-      <div class="process-item">
-        <span>STEP 02</span>
+      <div class="process-step reveal">
+        <div class="number">02</div>
         <h3>Design</h3>
-        <p>We create a website concept based on your brand and business needs.</p>
+        <p>We prepare a visual direction tailored to your business.</p>
       </div>
-
-      <div class="process-item">
-        <span>STEP 03</span>
+      <div class="process-step reveal">
+        <div class="number">03</div>
         <h3>Development</h3>
-        <p>We build the website and make sure it works across different screen sizes.</p>
+        <p>We build the website and make sure it works across devices.</p>
       </div>
-
-      <div class="process-item">
-        <span>STEP 04</span>
+      <div class="process-step reveal">
+        <div class="number">04</div>
         <h3>Launch</h3>
-        <p>After review and approval, we prepare the website for launch.</p>
+        <p>After approval and final payment, we arrange the website handover.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div class="about-text reveal">
+      <div class="section-label">About The Studio</div>
+      <h2>Good design should work as hard as your business.</h2>
+      <p>
+        Digital Growth Studio is an independent web design studio focused
+        on helping small businesses build a stronger online presence.
+      </p>
+      <p>
+        We believe a professional website should be clear, easy to use,
+        visually appealing, and built around the needs of real customers.
+      </p>
+    </div>
+
+    <div class="about-panel reveal">
+      <h3>Our approach</h3>
+      <div class="about-point"><span>✦</span> Clean and modern visual design</div>
+      <div class="about-point"><span>✦</span> Mobile-first user experience</div>
+      <div class="about-point"><span>✦</span> Clear communication</div>
+      <div class="about-point"><span>✦</span> Transparent project pricing</div>
+      <div class="about-point"><span>✦</span> Solutions for small businesses</div>
     </div>
   </div>
 </section>
 
 <section class="contact" id="contact">
-  <div class="container">
-    <div class="section-label">Let's work together</div>
-    <h2 class="section-heading">Ready to give your business a better online presence?</h2>
-    <p class="section-description">
-      Tell us a little about your business and what you're looking for. Let's build something great.
+  <div class="container reveal">
+    <div class="section-label">Let's Work Together</div>
+    <h2>Ready to give your business a <span class="gold">better online presence?</span></h2>
+    <p>
+      Tell us a little about your business and what you need.
+      Let's discuss a website that works for you.
     </p>
-
-    <a class="button" href="https://mail.google.com/mail/?view=cm&fs=1&to=danilovs.strojka@gmail.com&su=Website%20Project%20Inquiry">
+    <a class="btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=danilovs.strojka@gmail.com&su=Website%20Project%20Inquiry" target="_blank" rel="noopener noreferrer">
       Start Your Project ↗
     </a>
-
-    <a class="contact-email" href="mailto:danilovs.strojka@gmail.com">
-      danilovs.strojka@gmail.com
-    </a>
+    <p style="margin-top:24px;font-size:12px;">
+      Or email us directly:
+      <a class="gold" href="mailto:danilovs.strojka@gmail.com">danilovs.strojka@gmail.com</a>
+    </p>
   </div>
 </section>
-
 </main>
 
 <footer>
-  <div class="container">
-    <div class="footer-inner">
-      <a href="#" class="logo">DIGITAL<span>.</span>GROWTH</a>
-      <p>© 2026 Digital Growth Studio. All rights reserved.</p>
-      <a href="mailto:danilovs.strojka@gmail.com">Contact Us ↗</a>
+  <div class="container footer-content">
+    <a href="#home" class="logo">
+      <span class="logo-mark">D</span>
+      <span>Digital Growth <span class="gold">Studio</span></span>
+    </a>
+
+    <div class="footer-links">
+      <a href="#work">Projects</a>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="mailto:danilovs.strojka@gmail.com">Email</a>
+    </div>
+
+    <div class="footer-copy">
+      © <span id="year"></span> Digital Growth Studio. All rights reserved.
     </div>
   </div>
 </footer>
 
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", String(isOpen));
+  menuBtn.textContent = isOpen ? "×" : "☰";
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.textContent = "☰";
+  });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(element => {
+  observer.observe(element);
+});
+</script>
 </body>
 </html>
